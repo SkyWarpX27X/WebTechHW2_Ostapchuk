@@ -1,16 +1,70 @@
 <!DOCTYPE html>
-<html>
-<head lang="uk">
+<html lang="uk">
+<head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
 
 
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-	<span class="product-item">
-		Apple
-		<span class="amount">4</span>
-	</span>
+	<div class="frame">
+		<form>
+			<input type="text" placeholder="Назва товару"/>
+			<input type="submit" value="Додати"/>
+		</form>
+		<section>
+			<div>
+				Помідори
+			</div>
+			<div>
+				2
+			</div>
+			<div>
+				<button>Не куплено</button>
+			</div>
+		</section>
+		<section>
+			<div>
+				Печиво
+			</div>
+			<div>
+				<button>-</button>
+				2
+				<button>+</button>
+			</div>
+			<div>
+				<button>Куплено</button>
+			</div>
+		</section>
+		<section>
+			<div>
+				Сир
+			</div>
+			<div>
+				<button>-</button>
+				1
+				<button>+</button>
+			</div>
+			<div>
+				<button>Куплено</button>
+			</div>
+		</section>
+	</div>
+	<div class="frame">
+		<h2>Залишилося</h2>
+		<div>
+			<span class="product-item">
+				Apple<span class="amount">4</span>
+			</span>
+		</div>
+		<h2>Куплено</h2>
+		<div>
+			<span class="product-item">
+				Traktor<span class="amount">4</span>
+			</span>
+		</div>
+	</div>
 </body>
 </html>
