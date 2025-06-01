@@ -4,67 +4,75 @@
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
-
-
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-	<div class="frame">
-		<form>
-			<input type="text" placeholder="Назва товару"/>
-			<input type="submit" value="Додати"/>
+	<div class="products">
+		<form class="add-field">
+			<input type="text" class="text-field" placeholder="Назва товару"/>
+			<input type="submit" class="add-button" value="Додати"/>
 		</form>
-		<section>
-			<div>
+		<section class="product-edit">
+			<div class="product-name">
 				Помідори
 			</div>
-			<div>
-				2
+			<div class="edit-amount">
+				<span class="product-amount">2</span>
 			</div>
-			<div>
-				<button>Не куплено</button>
+			<div class="change-status">
+				<button class="status-button" data-tooltip="Куплено">Не куплено</button>
 			</div>
 		</section>
-		<section>
-			<div>
+		<section class="product-edit">
+			<div class="product-name" contenteditable="true">
 				Печиво
 			</div>
-			<div>
-				<button>-</button>
-				2
-				<button>+</button>
+			<div class="edit-amount">
+				<button class="minus" data-tooltip="-1 одиниця">-</button>
+				<span class="product-amount">2</span>
+				<button class="plus" data-tooltip="+1 одиниця">+</button>
 			</div>
-			<div>
-				<button>Куплено</button>
+			<div class="change-status">
+				<button class="status-button" data-tooltip="Не куплено">Куплено</button>
+				<button class="close-button" data-tooltip="Закрити">x</button>
 			</div>
 		</section>
-		<section>
-			<div>
+		<section class="product-edit">
+			<div class="product-name" contenteditable="true">
 				Сир
 			</div>
-			<div>
-				<button>-</button>
-				1
-				<button>+</button>
+			<div class="edit-amount">
+				<button class="minus" data-tooltip="-1 одиниця">-</button>
+				<span class="product-amount">1</span>
+				<button class="plus" data-tooltip="+1 одиниця">+</button>
 			</div>
-			<div>
-				<button>Куплено</button>
+			<div class="change-status">
+				<button class="status-button" data-tooltip="Не куплено">Куплено</button>
+				<button class="close-button" data-tooltip="Закрити">x</button>
 			</div>
 		</section>
 	</div>
-	<div class="frame">
-		<h2>Залишилося</h2>
-		<div>
-			<span class="product-item">
-				Apple<span class="amount">4</span>
+	<div class="cart">
+		<h2 class="cart-border">Залишилося</h2>
+		<div class="cart-border">
+			<span class="product-item" contenteditable="true">
+				Печиво<span class="amount">2</span>
+			</span>
+			<span class="product-item" contenteditable="true">
+				Сир<span class="amount">1</span>
 			</span>
 		</div>
-		<h2>Куплено</h2>
-		<div>
+		<h2 class="cart-border">Куплено</h2>
+		<div class="cart-border">
 			<span class="product-item">
-				Traktor<span class="amount">4</span>
+				Помідори<span class="amount">2</span>
 			</span>
 		</div>
+	</div>
+	<div class="badge">
+		<b class="buy-list">Buy List</b>
+		<p>Created by:</p>
+		<p>Ostapchuk Mykhailo</p>
 	</div>
 </body>
 </html>

@@ -1,15 +1,22 @@
 .product-item {
 	background-color: rgb(226, 226, 226);
 	display: inline-block;
-	height: 25px;
+	height: 20px;
 	padding: 5px;
 	border-radius: 5px;
+	font-weight: bold;
+	color: rgb(92, 92, 92);
+	font-size: 14px;
+	margin-bottom: 1%;
+	margin-top: 1%;
+	text-decoration: line-through;
 }
 
 .amount {
+	margin-left: 3px;
 	background-color: darkorange;
 	border-radius: 10px;
-	
+	color: white;
 	display: inline-block;
 	height: 20px;
 	width: 20px;
@@ -17,11 +24,246 @@
 }
 
 body {
-	background-color: lightgray;
+	background-color: lightgrey;
+	display: flex;
+	font-family: sans-serif;
+	flex-wrap: wrap;
 }
 
-.frame {
+.products {
+	
 	background-color: white;
+	height: fit-content;
 	border-radius: 5px;
 	box-shadow: 2px 2px 5px grey;
+	width: 60%;
+	margin: 1%;
+}
+
+.cart {
+	
+	background-color: white;
+	height: fit-content;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px grey;
+	width: 35%;
+	margin: 1%;
+}
+
+h2 {
+	padding: 2%;
+	border: 1px grey;
+	margin: 0;
+}
+
+.cart-border {
+	border-bottom: 1px solid lightgrey;
+	padding: 2%;
+}
+
+.add-field {
+	border-bottom: 1px solid lightgrey;
+	padding: 2%;
+	display: flex;
+}
+
+.product-edit {
+	border-bottom: 1px solid lightgrey;
+	padding: 1%;
+	padding-left: 2%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.product-name{
+	justify-self: start;
+	font-size: larger;
+	align-self: center;
+	text-decoration: line-through;
+}
+
+[contenteditable="true"]{
+	text-decoration: none;
+}
+
+.edit-amount{
+	justify-self: center;
+	align-self: center;
+}
+
+.product-amount{
+	background-color: rgb(226, 226, 226);
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 20%;
+	color: rgb(92, 92, 92);
+	font-weight: bold;
+}
+
+.change-status{
+	justify-self: end;
+	align-self: center;
+}
+
+.status-button{
+	border: 1px solid lightgrey;
+	color: rgb(92, 92, 92);
+	font-weight: bold;
+	padding: 8px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 5px;
+	box-shadow: 0 3px 0 lightgrey;
+}
+
+.close-button{
+	border: 0;
+	background-color: rgb(223, 51, 51);
+	box-shadow: 0 3px 0 rgb(163, 18, 18);
+	width: 30px;
+	height: 28px;
+	font-size: 80%;
+	color: white;
+	border-radius: 20%;
+}
+
+.minus{
+	width: 30px;
+	height: 28px;
+	font-size: 150%;
+	background-color: rgb(223, 51, 51);
+	border: 0;
+	color: white;
+	border-radius: 50%;
+	box-shadow: 0 3px 0 rgb(163, 18, 18);
+}
+
+.plus{
+	width: 30px;
+	height: 28px;
+	font-size: 150%;
+	background-color: rgb(32, 161, 27);
+	border: 0;
+	color: white;
+	border-radius: 15px;
+	box-shadow: 0 3px 0 green;
+}
+
+.text-field{
+	display: inline-flex;
+	width: 76%;
+	height: 40px;
+	border: 1px solid lightgrey;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.text-field::placeholder{
+	padding: 10px;
+	font-size: 20px;
+}
+
+.add-button {
+	display: inline-flex;
+	background-color: rgb(37, 118, 194);
+	color: white;
+	width: 21%;
+	height: 40px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: 0;
+	box-shadow: 0 4px rgb(23, 94, 175);
+	font-weight: bold;
+	font-size: 100%;
+}
+
+.badge{
+	border:0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100px;
+	height: 40px;
+	background-color: rgb(170, 31, 170);
+	color:white;
+	transition: all 1s ease;
+	margin-left: 50px;
+	border-radius: 10px 10px 0 0;
+	display: block;
+}
+
+.badge b{
+	padding-top: 5px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	color:white;
+	height:30px;
+}
+
+.badge p{
+	align-items: center;
+	color:white;
+	height:15px;
+	padding-left: 10px;
+}
+
+.badge:hover{
+	height: 150px;
+	background-color: rgb(83, 32, 224);
+}
+
+@media print {
+	* {
+		print-color-adjust: exact; 
+	}
+	.badge{
+		background-color: white;
+		border: 3px solid rgb(170, 31, 170);
+		height: 85px;
+	}
+	.badge b, .badge p{
+		color:black;
+	}
+	.badge .buy-list{
+		display: none;
+	}
+}
+
+@media (max-width:500px) {
+	.products{
+		width: 100%;
+		order: 1;
+	}
+	.cart{
+		width: 100%;
+		order: 1;
+	}
+}
+
+button:hover::after{
+    content: attr(data-tooltip);
+	font-size: medium;
+    position: absolute;
+    transform: translateX(-50%) translateY(-120%);
+    background-color: darkviolet;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+button::after{
+    content: attr(data-tooltip);
+	font-size: medium;
+    position: absolute;
+    transform: translateX(-50%) scale(10%);
+    background-color: darkviolet;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+	transition: all 0.3s ease;
 }
