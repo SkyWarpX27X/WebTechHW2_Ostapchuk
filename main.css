@@ -247,7 +247,7 @@ button:hover::after{
 	font-size: medium;
     position: absolute;
     transform: translateX(-50%) translateY(-120%);
-    background-color: darkviolet;
+    background-color: rgb(170, 31, 170);
     color: white;
     padding: 5px;
     border-radius: 5px;
@@ -260,7 +260,7 @@ button::after{
 	font-size: medium;
     position: absolute;
     transform: translateX(-50%) scale(10%);
-    background-color: darkviolet;
+    background-color: rgb(170, 31, 170);
     color: white;
     padding: 5px;
     border-radius: 5px;
