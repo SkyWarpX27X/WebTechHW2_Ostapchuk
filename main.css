@@ -63,7 +63,7 @@ h2 {
 
 .add-field {
 	border-bottom: 1px solid lightgrey;
-	padding: 2%;
+	padding: 1%;
 	display: flex;
 }
 
@@ -168,7 +168,7 @@ h2 {
 	display: inline-flex;
 	background-color: rgb(37, 118, 194);
 	color: white;
-	width: 21%;
+	width: 24%;
 	height: 40px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
