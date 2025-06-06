@@ -9,6 +9,10 @@
 	font-size: 14px;
 	margin-bottom: 1%;
 	margin-top: 1%;
+	margin-left: 5px;
+}
+
+.bought-item {
 	text-decoration: line-through;
 }
 
@@ -57,6 +61,8 @@ h2 {
 }
 
 .cart-border {
+	display: flex;
+	flex-wrap: wrap;
 	border-bottom: 1px solid lightgrey;
 	padding: 2%;
 }
@@ -87,6 +93,7 @@ h2 {
 }
 
 .edit-amount{
+	display: flex;
 	justify-self: center;
 	align-self: center;
 }
@@ -99,11 +106,13 @@ h2 {
 	border-radius: 20%;
 	color: rgb(92, 92, 92);
 	font-weight: bold;
+	margin: 5px;
 }
 
 .change-status{
 	justify-self: end;
 	align-self: center;
+	display: flex;
 }
 
 .status-button{
@@ -115,6 +124,7 @@ h2 {
 	padding-right: 15px;
 	border-radius: 5px;
 	box-shadow: 0 3px 0 lightgrey;
+	margin-right: 5px;
 }
 
 .close-button{
@@ -122,7 +132,7 @@ h2 {
 	background-color: rgb(223, 51, 51);
 	box-shadow: 0 3px 0 rgb(163, 18, 18);
 	width: 30px;
-	height: 28px;
+	height: 30px;
 	font-size: 80%;
 	color: white;
 	border-radius: 20%;
@@ -157,10 +167,7 @@ h2 {
 	border: 1px solid lightgrey;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
-}
-
-.text-field::placeholder{
-	padding: 10px;
+	padding-left: 15px;
 	font-size: 20px;
 }
 

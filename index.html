@@ -8,66 +8,17 @@
 </head>
 <body>
 	<div class="products">
-		<form class="add-field">
+		<form class="add-field" onsubmit="addProduct(); return false">
 			<input type="text" class="text-field" placeholder="Назва товару"/>
 			<input type="submit" class="add-button" value="Додати"/>
 		</form>
-		<section class="product-edit">
-			<div class="product-name">
-				Помідори
-			</div>
-			<div class="edit-amount">
-				<span class="product-amount">2</span>
-			</div>
-			<div class="change-status">
-				<button class="status-button" data-tooltip="Куплено">Не куплено</button>
-			</div>
-		</section>
-		<section class="product-edit">
-			<div class="product-name" contenteditable="true">
-				Печиво
-			</div>
-			<div class="edit-amount">
-				<button class="minus" data-tooltip="-1 одиниця">-</button>
-				<span class="product-amount">2</span>
-				<button class="plus" data-tooltip="+1 одиниця">+</button>
-			</div>
-			<div class="change-status">
-				<button class="status-button" data-tooltip="Не куплено">Куплено</button>
-				<button class="close-button" data-tooltip="Закрити">x</button>
-			</div>
-		</section>
-		<section class="product-edit">
-			<div class="product-name" contenteditable="true">
-				Сир
-			</div>
-			<div class="edit-amount">
-				<button class="minus" data-tooltip="-1 одиниця">-</button>
-				<span class="product-amount">1</span>
-				<button class="plus" data-tooltip="+1 одиниця">+</button>
-			</div>
-			<div class="change-status">
-				<button class="status-button" data-tooltip="Не куплено">Куплено</button>
-				<button class="close-button" data-tooltip="Закрити">x</button>
-			</div>
-		</section>
+		<div></div>
 	</div>
 	<div class="cart">
 		<h2 class="cart-border">Залишилося</h2>
-		<div class="cart-border">
-			<span class="product-item" contenteditable="true">
-				Печиво<span class="amount">2</span>
-			</span>
-			<span class="product-item" contenteditable="true">
-				Сир<span class="amount">1</span>
-			</span>
-		</div>
+		<div class="cart-border to-buy"></div>
 		<h2 class="cart-border">Куплено</h2>
-		<div class="cart-border">
-			<span class="product-item">
-				Помідори<span class="amount">2</span>
-			</span>
-		</div>
+		<div class="cart-border bought-list"></div>
 	</div>
 	<div class="badge">
 		<b class="buy-list">Buy List</b>
@@ -75,4 +26,5 @@
 		<p>Ostapchuk Mykhailo</p>
 	</div>
 </body>
+<script src="script.js"></script>
 </html>
