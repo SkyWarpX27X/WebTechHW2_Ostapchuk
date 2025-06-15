@@ -4,7 +4,12 @@ var products = [
     {name: 'Сир', amount: 1, bought: false},
 ];
 
-document.addEventListener('DOMContentLoaded', () => updateList());
+document.addEventListener('DOMContentLoaded', () => {
+    if(JSON.parse(localStorage.getItem('savedList')).length != 0){
+        products = JSON.parse(localStorage.getItem('savedList'));
+    }
+    updateList();
+});
 
 function updateList(){
     document.querySelector('.to-buy').innerHTML = null;
@@ -21,6 +26,7 @@ function updateList(){
                     if(productName.firstChild.data != null) {
                         product.name = productName.firstChild.data;
                     }
+                    localStorage.setItem('savedList', JSON.stringify(products));
                     updateList();
                 })
             productSection.appendChild(productName);
@@ -34,6 +40,7 @@ function updateList(){
                     minus.addEventListener('click', ()=>{
                         if(product.amount > 1) {
                             product.amount--;
+                            localStorage.setItem('savedList', JSON.stringify(products));
                             updateList();
                         }
                     });
@@ -50,6 +57,7 @@ function updateList(){
                     plus.appendChild(document.createTextNode('+'));
                     plus.addEventListener('click', ()=>{
                         product.amount++;
+                        localStorage.setItem('savedList', JSON.stringify(products));
                         updateList();
                     });
                     editAmount.appendChild(plus);
@@ -73,12 +81,14 @@ function updateList(){
                     closeButton.appendChild(document.createTextNode('x'));
                     closeButton.addEventListener('click', ()=>{
                         products.splice(products.indexOf(product), 1);
+                        localStorage.setItem('savedList', JSON.stringify(products));
                         updateList();
                     })
                     changeStatus.appendChild(closeButton);
                 }
                 statusButton.addEventListener('click', ()=>{
                     product.bought = !product.bought;
+                    localStorage.setItem('savedList', JSON.stringify(products));
                     updateList();
                 });
             productSection.appendChild(changeStatus);
@@ -105,6 +115,7 @@ function addProduct(){
     document.querySelector('.text-field').focus();
     if(name != ''){
         products.push({name, amount: 1, bought: false});
+        localStorage.setItem('savedList', JSON.stringify(products));
         updateList();
     }
 }
